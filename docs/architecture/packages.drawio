@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2026-10-09T22:30:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="diag_1" name="Page-1">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Presentation Package -->
+        <mxCell id="pkg_ui" value="«package»&#10;Presentation Layer (Web UI &amp; REST API)&#10;• StudentPortalController&#10;• WardenDashboardController&#10;• AdminConsoleController" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=12;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="840" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Identity & Access -->
+        <mxCell id="pkg_id" value="«package»&#10;Identity &amp; Access&#10;• User&#10;• Student&#10;• Role (RBAC)&#10;• AuthService" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="230" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Dormitory Inventory -->
+        <mxCell id="pkg_inv" value="«package»&#10;Dormitory Inventory&#10;• Корпус (Building)&#10;• Комната (Room)&#10;• Место (BedPlace)&#10;• AutoSearchEngine" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="220" width="240" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Tenancy Core (Core) -->
+        <mxCell id="pkg_tenancy" value="«package»&#10;Tenancy Core (Ядро заселения)&#10;• Заявление (Application)&#10;• Заселение (CheckIn)&#10;• ДоговорНайма (Contract)&#10;• Выселение (CheckOut)" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="220" width="230" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Maintenance -->
+        <mxCell id="pkg_maint" value="«package»&#10;Maintenance &amp; Repairs&#10;• ЗаявкаНаРемонт&#10;• RepairCatalog&#10;• MaintenanceLog" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#F3E8FF;strokeColor=#7C3AED;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="230" y="440" width="230" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Billing & Analytics -->
+        <mxCell id="pkg_billing" value="«package»&#10;Billing &amp; Analytics&#10;• Платёж (Payment)&#10;• DebtTracker&#10;• FinancialReportService" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#F3E8FF;strokeColor=#7C3AED;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="440" width="240" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- External Systems -->
+        <mxCell id="pkg_ext" value="«package, external»&#10;External Gateways&#10;• BankPaymentGateway&#10;• NotificationService (SMS/Email)" style="shape=folder;fontStyle=1;tabWidth=120;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="640" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Dependencies (dashed open arrows, NO CYCLES) -->
+        <!-- UI depends on Core, Inv, ID, Maint, Billing -->
+        <mxCell id="dep_ui_id" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="pkg_ui" target="pkg_id" />
+        <mxCell id="dep_ui_inv" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="pkg_ui" target="pkg_inv" />
+        <mxCell id="dep_ui_ten" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="pkg_ui" target="pkg_tenancy" />
+
+        <!-- Tenancy depends on Inv and ID -->
+        <mxCell id="dep_ten_inv" style="dashed=1;endArrow=open;endFill=0;strokeColor=#D97706;strokeWidth=1.8;" edge="1" parent="1" source="pkg_tenancy" target="pkg_inv" />
+        <mxCell id="dep_ten_id" style="dashed=1;endArrow=open;endFill=0;strokeColor=#D97706;strokeWidth=1.8;" edge="1" parent="1" source="pkg_tenancy" target="pkg_id" />
+
+        <!-- Maintenance depends on Inv and ID -->
+        <mxCell id="dep_maint_inv" style="dashed=1;endArrow=open;endFill=0;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="pkg_maint" target="pkg_inv" />
+        <mxCell id="dep_maint_id" style="dashed=1;endArrow=open;endFill=0;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="pkg_maint" target="pkg_id" />
+
+        <!-- Billing depends on Tenancy and ID -->
+        <mxCell id="dep_bill_ten" style="dashed=1;endArrow=open;endFill=0;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="pkg_billing" target="pkg_tenancy" />
+        <mxCell id="dep_bill_id" style="dashed=1;endArrow=open;endFill=0;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="pkg_billing" target="pkg_id" />
+
+        <!-- Billing depends on External -->
+        <mxCell id="dep_bill_ext" style="dashed=1;endArrow=open;endFill=0;strokeColor=#64748B;strokeWidth=1.5;" edge="1" parent="1" source="pkg_billing" target="pkg_ext" />
+    
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
