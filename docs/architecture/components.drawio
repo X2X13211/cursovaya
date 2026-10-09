@@ -1,64 +1,64 @@
 <mxfile host="app.diagrams.net" modified="2026-10-09T22:30:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
-  <diagram id="diag_1" name="Page-1">
-    <mxGraphModel dx="1150" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="780" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+ <diagram id="diag_1" name="Page-1">
+  <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="780" math="0" shadow="0">
+   <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
 
-        <!-- Main Application Component -->
-        <mxCell id="comp_app" value="«component»&#10;Dormitory Management System&#10;(Модульный монолит)" style="shape=module;align=left;spacingLeft=20;verticalAlign=top;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="60" y="50" width="750" height="520" as="geometry" />
-        </mxCell>
+    <!-- Main Application Component -->
+    <mxCell id="comp_app" value="«component»&#10;Dormitory Management System&#10;(Модульный монолит)" style="shape=module;align=left;spacingLeft=20;verticalAlign=top;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontStyle=1;fontSize=13;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="60" y="50" width="750" height="520" as="geometry" />
+    </mxCell>
 
-        <!-- Subcomponents inside Monolith -->
-        <mxCell id="c_sub_web" value="«component»&#10;Web UI &amp; REST Controller" style="shape=component;align=center;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="comp_app">
-          <mxGeometry x="50" y="60" width="180" height="70" as="geometry" />
-        </mxCell>
+    <!-- Subcomponents inside Monolith -->
+    <mxCell id="c_sub_web" value="«component»&#10;Web UI &amp; REST Controller" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="50" y="60" width="180" height="70" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_sec" value="«component»&#10;Security &amp; Auth (RBAC)" style="shape=component;align=center;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=1.5;fontSize=11;" vertex="1" parent="comp_app">
-          <mxGeometry x="270" y="60" width="180" height="70" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_sec" value="«component»&#10;Security &amp; Auth (RBAC)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="270" y="60" width="180" height="70" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_search" value="«component»&#10;Auto-Search Engine&#10;(Подбор свободных мест)" style="shape=component;align=center;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="comp_app">
-          <mxGeometry x="490" y="60" width="200" height="70" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_search" value="«component»&#10;Auto-Search Engine&#10;(Подбор свободных мест)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=11;fontStyle=1;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="490" y="60" width="200" height="70" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_core" value="«component»&#10;Tenancy &amp; Check-In Core&#10;(Управление заселением)" style="shape=component;align=center;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="comp_app">
-          <mxGeometry x="150" y="200" width="210" height="75" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_core" value="«component»&#10;Tenancy &amp; Check-In Core&#10;(Управление заселением)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=11;fontStyle=1;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="150" y="200" width="210" height="75" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_maint" value="«component»&#10;Maintenance Module&#10;(Заявки на ремонт)" style="shape=component;align=center;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="comp_app">
-          <mxGeometry x="420" y="200" width="190" height="75" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_maint" value="«component»&#10;Maintenance Module&#10;(Заявки на ремонт)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="420" y="200" width="190" height="75" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_bill" value="«component»&#10;Billing &amp; Debt Module&#10;(Биллинг и задолженность)" style="shape=component;align=center;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="comp_app">
-          <mxGeometry x="270" y="340" width="210" height="75" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_bill" value="«component»&#10;Billing &amp; Debt Module&#10;(Биллинг и задолженность)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="270" y="340" width="210" height="75" as="geometry" />
+    </mxCell>
 
-        <mxCell id="c_sub_dal" value="«component»&#10;Data Access Layer (ORM / Repository)" style="shape=component;align=center;html=1;fillColor=#F1F5F9;strokeColor=#475569;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="comp_app">
-          <mxGeometry x="150" y="440" width="450" height="55" as="geometry" />
-        </mxCell>
+    <mxCell id="c_sub_dal" value="«component»&#10;Data Access Layer (ORM / Repository)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontStyle=1;fontFamily=Arial;" vertex="1" parent="comp_app">
+     <mxGeometry x="150" y="440" width="450" height="55" as="geometry" />
+    </mxCell>
 
-        <!-- External Database -->
-        <mxCell id="comp_db" value="«database»&#10;PostgreSQL Database&#10;(Схемы: auth, tenancy,&#10;inventory, billing)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#EFF6FF;strokeColor=#1D4ED8;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="630" width="190" height="90" as="geometry" />
-        </mxCell>
+    <!-- External Database -->
+    <mxCell id="comp_db" value="«database»&#10;PostgreSQL Database&#10;(Схемы: auth, tenancy,&#10;inventory, billing)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=11;fontStyle=1;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="340" y="630" width="190" height="90" as="geometry" />
+    </mxCell>
 
-        <!-- External Services -->
-        <mxCell id="comp_bank" value="«external»&#10;Банковский платёжный шлюз&#10;(СБП / Эквайринг)" style="shape=component;align=center;html=1;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;dashed=1;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="870" y="340" width="190" height="75" as="geometry" />
-        </mxCell>
+    <!-- External Services -->
+    <mxCell id="comp_bank" value="«external»&#10;Банковский платёжный шлюз&#10;(СБП / Эквайринг)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="870" y="340" width="190" height="75" as="geometry" />
+    </mxCell>
 
-        <mxCell id="comp_notify" value="«external»&#10;Шлюз уведомлений&#10;(SMS / Email)" style="shape=component;align=center;html=1;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;dashed=1;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="870" y="190" width="190" height="75" as="geometry" />
-        </mxCell>
+    <mxCell id="comp_notify" value="«external»&#10;Шлюз уведомлений&#10;(SMS / Email)" style="shape=component;align=center;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="870" y="190" width="190" height="75" as="geometry" />
+    </mxCell>
 
-        <!-- Connections -->
-        <mxCell id="con_app_db" value="SQL (TCP 5432)" style="endArrow=none;strokeColor=#1D4ED8;strokeWidth=2;" edge="1" parent="1" source="c_sub_dal" target="comp_db" />
-        <mxCell id="con_bill_bank" value="REST / HTTPS" style="endArrow=none;strokeColor=#64748B;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="c_sub_bill" target="comp_bank" />
-        <mxCell id="con_core_notify" value="REST / HTTPS" style="endArrow=none;strokeColor=#64748B;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="c_sub_core" target="comp_notify" />
-    
-      </root>
-    </mxGraphModel>
-  </diagram>
+    <!-- Connections -->
+    <mxCell id="con_app_db" value="SQL (TCP 5432)" style="endArrow=none;strokeColor=#52695C;strokeWidth=2;fontFamily=Arial;" edge="1" parent="1" source="c_sub_dal" target="comp_db" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_bill_bank" value="REST / HTTPS" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_bill" target="comp_bank" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_core_notify" value="REST / HTTPS" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_core" target="comp_notify" ><mxGeometry relative="1" as="geometry" /></mxCell>
+  
+   </root>
+  </mxGraphModel>
+ </diagram>
 </mxfile>

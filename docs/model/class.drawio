@@ -1,136 +1,136 @@
 <mxfile host="app.diagrams.net" modified="2026-10-09T22:30:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
-  <diagram id="diag_1" name="Page-1">
-    <mxGraphModel dx="1150" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="750" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+ <diagram id="diag_1" name="Page-1">
+  <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="750" math="0" shadow="0">
+   <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
 
-        <!-- Building Class -->
-        <mxCell id="c_building" value="Корпус" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="50" width="180" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="c_b_attr" value="- id: Long&#10;- name: String&#10;- address: String&#10;- totalFloors: Integer&#10;- wardenContact: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_building">
-          <mxGeometry y="26" width="180" height="84" as="geometry" />
-        </mxCell>
+    <!-- Building Class -->
+    <mxCell id="c_building" value="Корпус" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="40" y="50" width="180" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="c_b_attr" value="- id: Long&#10;- name: String&#10;- address: String&#10;- totalFloors: Integer&#10;- wardenContact: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_building">
+     <mxGeometry y="26" width="180" height="84" as="geometry" />
+    </mxCell>
 
-        <!-- Room Class -->
-        <mxCell id="c_room" value="Комната" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="290" y="50" width="180" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_r_attr" value="- id: Long&#10;- roomNumber: String&#10;- floor: Integer&#10;- roomType: String&#10;- capacity: Integer&#10;- status: RoomStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_room">
-          <mxGeometry y="26" width="180" height="94" as="geometry" />
-        </mxCell>
+    <!-- Room Class -->
+    <mxCell id="c_room" value="Комната" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="290" y="50" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_r_attr" value="- id: Long&#10;- roomNumber: String&#10;- floor: Integer&#10;- roomType: String&#10;- capacity: Integer&#10;- status: RoomStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_room">
+     <mxGeometry y="26" width="180" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- BedPlace Class -->
-        <mxCell id="c_bed" value="Место" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="540" y="50" width="180" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="c_bed_attr" value="- id: Long&#10;- bedNumber: Integer&#10;- status: PlaceStatus&#10;- description: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_bed">
-          <mxGeometry y="26" width="180" height="84" as="geometry" />
-        </mxCell>
+    <!-- BedPlace Class -->
+    <mxCell id="c_bed" value="Место" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="540" y="50" width="180" height="110" as="geometry" />
+    </mxCell>
+    <mxCell id="c_bed_attr" value="- id: Long&#10;- bedNumber: Integer&#10;- status: PlaceStatus&#10;- description: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_bed">
+     <mxGeometry y="26" width="180" height="84" as="geometry" />
+    </mxCell>
 
-        <!-- Student Class -->
-        <mxCell id="c_student" value="Студент" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="800" y="50" width="200" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="c_st_attr" value="- id: Long&#10;- fullName: String&#10;- studentCard: String&#10;- birthDate: LocalDate&#10;- gender: Gender&#10;- faculty: String&#10;- course: Integer&#10;- phone: String&#10;- hasBenefit: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_student">
-          <mxGeometry y="26" width="200" height="124" as="geometry" />
-        </mxCell>
+    <!-- Student Class -->
+    <mxCell id="c_student" value="Студент" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="800" y="50" width="200" height="150" as="geometry" />
+    </mxCell>
+    <mxCell id="c_st_attr" value="- id: Long&#10;- fullName: String&#10;- studentCard: String&#10;- birthDate: LocalDate&#10;- gender: Gender&#10;- faculty: String&#10;- course: Integer&#10;- phone: String&#10;- hasBenefit: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_student">
+     <mxGeometry y="26" width="200" height="124" as="geometry" />
+    </mxCell>
 
-        <!-- Application Class -->
-        <mxCell id="c_app" value="Заявление" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="800" y="270" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_app_attr" value="- id: Long&#10;- appNumber: String&#10;- submissionDate: LocalDate&#10;- desiredRoomType: String&#10;- status: AppStatus&#10;- decisionDate: LocalDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_app">
-          <mxGeometry y="26" width="200" height="94" as="geometry" />
-        </mxCell>
+    <!-- Application Class -->
+    <mxCell id="c_app" value="Заявление" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="800" y="270" width="200" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_app_attr" value="- id: Long&#10;- appNumber: String&#10;- submissionDate: LocalDate&#10;- desiredRoomType: String&#10;- status: AppStatus&#10;- decisionDate: LocalDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_app">
+     <mxGeometry y="26" width="200" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- CheckIn Class -->
-        <mxCell id="c_chin" value="Заселение" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="540" y="270" width="180" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_chin_attr" value="- id: Long&#10;- checkInDate: LocalDate&#10;- plannedUntil: LocalDate&#10;- isKeyIssued: Boolean&#10;- status: CheckInStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_chin">
-          <mxGeometry y="26" width="180" height="94" as="geometry" />
-        </mxCell>
+    <!-- CheckIn Class -->
+    <mxCell id="c_chin" value="Заселение" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="540" y="270" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_chin_attr" value="- id: Long&#10;- checkInDate: LocalDate&#10;- plannedUntil: LocalDate&#10;- isKeyIssued: Boolean&#10;- status: CheckInStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_chin">
+     <mxGeometry y="26" width="180" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- TenancyContract Class -->
-        <mxCell id="c_contract" value="ДоговорНайма" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="290" y="270" width="180" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_cont_attr" value="- id: Long&#10;- contractNumber: String&#10;- signDate: LocalDate&#10;- monthlyCost: Decimal&#10;- validUntil: LocalDate&#10;- terms: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_contract">
-          <mxGeometry y="26" width="180" height="94" as="geometry" />
-        </mxCell>
+    <!-- TenancyContract Class -->
+    <mxCell id="c_contract" value="ДоговорНайма" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="290" y="270" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_cont_attr" value="- id: Long&#10;- contractNumber: String&#10;- signDate: LocalDate&#10;- monthlyCost: Decimal&#10;- validUntil: LocalDate&#10;- terms: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_contract">
+     <mxGeometry y="26" width="180" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- CheckOut Class -->
-        <mxCell id="c_cout" value="Выселение" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="540" y="470" width="180" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_cout_attr" value="- id: Long&#10;- checkOutDate: LocalDate&#10;- reason: String&#10;- clearanceSheetPassed: Boolean&#10;- keysReturned: Boolean&#10;- depositRefunded: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_cout">
-          <mxGeometry y="26" width="180" height="94" as="geometry" />
-        </mxCell>
+    <!-- CheckOut Class -->
+    <mxCell id="c_cout" value="Выселение" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="540" y="470" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_cout_attr" value="- id: Long&#10;- checkOutDate: LocalDate&#10;- reason: String&#10;- clearanceSheetPassed: Boolean&#10;- keysReturned: Boolean&#10;- depositRefunded: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_cout">
+     <mxGeometry y="26" width="180" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- MaintenanceRequest Class -->
-        <mxCell id="c_repair" value="ЗаявкаНаРемонт" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#F3E8FF;strokeColor=#7C3AED;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="40" y="270" width="180" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_rep_attr" value="- id: Long&#10;- requestNumber: String&#10;- category: RepairCategory&#10;- description: String&#10;- createdDate: LocalDateTime&#10;- status: RequestStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_repair">
-          <mxGeometry y="26" width="180" height="94" as="geometry" />
-        </mxCell>
+    <!-- MaintenanceRequest Class -->
+    <mxCell id="c_repair" value="ЗаявкаНаРемонт" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="40" y="270" width="180" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_rep_attr" value="- id: Long&#10;- requestNumber: String&#10;- category: RepairCategory&#10;- description: String&#10;- createdDate: LocalDateTime&#10;- status: RequestStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_repair">
+     <mxGeometry y="26" width="180" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- Payment Class -->
-        <mxCell id="c_pay" value="Платёж" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#F3E8FF;strokeColor=#7C3AED;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="800" y="470" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="c_pay_attr" value="- id: Long&#10;- transactionId: String&#10;- amount: Decimal&#10;- paymentDate: LocalDateTime&#10;- billingPeriod: String&#10;- status: PaymentStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;" vertex="1" parent="c_pay">
-          <mxGeometry y="26" width="200" height="94" as="geometry" />
-        </mxCell>
+    <!-- Payment Class -->
+    <mxCell id="c_pay" value="Платёж" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" vertex="1" parent="1">
+     <mxGeometry x="800" y="470" width="200" height="120" as="geometry" />
+    </mxCell>
+    <mxCell id="c_pay_attr" value="- id: Long&#10;- transactionId: String&#10;- amount: Decimal&#10;- paymentDate: LocalDateTime&#10;- billingPeriod: String&#10;- status: PaymentStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;html=1;fontSize=11;fontFamily=Arial;" vertex="1" parent="c_pay">
+     <mxGeometry y="26" width="200" height="94" as="geometry" />
+    </mxCell>
 
-        <!-- Compositions -->
-        <!-- Building *-- Room (1 to 1..*) -->
-        <mxCell id="rel_b_r" value="" style="endArrow=diamondThin;endFill=1;startArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="c_room" target="c_building">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="m_b_1" value="1" style="edgeLabel;align=right;verticalAlign=bottom;fontSize=11;" vertex="1" parent="rel_b_r" relative="1"><mxGeometry x="-0.8" relative="1" as="geometry" /></mxCell>
-        <mxCell id="m_r_n" value="1..*" style="edgeLabel;align=left;verticalAlign=bottom;fontSize=11;" vertex="1" parent="rel_b_r" relative="1"><mxGeometry x="0.8" relative="1" as="geometry" /></mxCell>
+    <!-- Compositions -->
+    <!-- Building * -  Room (1 to 1..*) -->
+    <mxCell id="rel_b_r" value="" style="endArrow=diamondThin;endFill=1;startArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_room" target="c_building">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="m_b_1" value="1" style="edgeLabel;align=right;verticalAlign=bottom;fontSize=11;fontFamily=Arial;" vertex="1" parent="rel_b_r" relative="1"><mxGeometry x="-0.8" relative="1" as="geometry" /></mxCell>
+    <mxCell id="m_r_n" value="1..*" style="edgeLabel;align=left;verticalAlign=bottom;fontSize=11;fontFamily=Arial;" vertex="1" parent="rel_b_r" relative="1"><mxGeometry x="0.8" relative="1" as="geometry" /></mxCell>
 
-        <!-- Room *-- BedPlace (1 to 1..*) -->
-        <mxCell id="rel_r_b" value="" style="endArrow=diamondThin;endFill=1;startArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="c_bed" target="c_room">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="m_r_1" value="1" style="edgeLabel;align=right;verticalAlign=bottom;fontSize=11;" vertex="1" parent="rel_r_b" relative="1"><mxGeometry x="-0.8" relative="1" as="geometry" /></mxCell>
-        <mxCell id="m_b_n" value="1..*" style="edgeLabel;align=left;verticalAlign=bottom;fontSize=11;" vertex="1" parent="rel_r_b" relative="1"><mxGeometry x="0.8" relative="1" as="geometry" /></mxCell>
+    <!-- Room * -  BedPlace (1 to 1..*) -->
+    <mxCell id="rel_r_b" value="" style="endArrow=diamondThin;endFill=1;startArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_bed" target="c_room">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="m_r_1" value="1" style="edgeLabel;align=right;verticalAlign=bottom;fontSize=11;fontFamily=Arial;" vertex="1" parent="rel_r_b" relative="1"><mxGeometry x="-0.8" relative="1" as="geometry" /></mxCell>
+    <mxCell id="m_b_n" value="1..*" style="edgeLabel;align=left;verticalAlign=bottom;fontSize=11;fontFamily=Arial;" vertex="1" parent="rel_r_b" relative="1"><mxGeometry x="0.8" relative="1" as="geometry" /></mxCell>
 
-        <!-- Associations -->
-        <!-- BedPlace -- Student (0..1 to 0..1) -->
-        <mxCell id="rel_bed_st" value="" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="c_bed" target="c_student">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- Student -- Application (1 to 0..*) -->
-        <mxCell id="rel_st_app" value="" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="c_student" target="c_app">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- Application -- CheckIn (1 to 0..1) -->
-        <mxCell id="rel_app_chin" value="" style="endArrow=none;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="c_app" target="c_chin">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- CheckIn *-- Contract (1 to 1 composition) -->
-        <mxCell id="rel_chin_cont" value="" style="endArrow=diamondThin;endFill=1;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="c_contract" target="c_chin">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- CheckIn -- CheckOut (1 to 0..1) -->
-        <mxCell id="rel_chin_cout" value="" style="endArrow=none;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="c_chin" target="c_cout">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- Student -- Payment (1 to 0..*) -->
-        <mxCell id="rel_st_pay" value="" style="endArrow=none;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="c_app" target="c_pay">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- Room -- Repair (1 to 0..*) -->
-        <mxCell id="rel_r_repair" value="" style="endArrow=none;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="c_room" target="c_repair">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-    
-      </root>
-    </mxGraphModel>
-  </diagram>
+    <!-- Associations -->
+    <!-- BedPlace - Student (0..1 to 0..1) -->
+    <mxCell id="rel_bed_st" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_bed" target="c_student">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Student - Application (1 to 0..*) -->
+    <mxCell id="rel_st_app" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_student" target="c_app">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Application - CheckIn (1 to 0..1) -->
+    <mxCell id="rel_app_chin" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_app" target="c_chin">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- CheckIn * -  Contract (1 to 1 composition) -->
+    <mxCell id="rel_chin_cont" value="" style="endArrow=diamondThin;endFill=1;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_contract" target="c_chin">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- CheckIn - CheckOut (1 to 0..1) -->
+    <mxCell id="rel_chin_cout" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_chin" target="c_cout">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Student - Payment (1 to 0..*) -->
+    <mxCell id="rel_st_pay" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_app" target="c_pay">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <!-- Room - Repair (1 to 0..*) -->
+    <mxCell id="rel_r_repair" value="" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" edge="1" parent="1" source="c_room" target="c_repair">
+     <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+  
+   </root>
+  </mxGraphModel>
+ </diagram>
 </mxfile>
