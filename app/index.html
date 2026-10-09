@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Система управления общежитием | Dormitory Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-header">
+      <div class="brand">
+        <div class="brand-logo">🏢</div>
+        <div class="brand-info">
+          <h1>Общежитие-Смарт</h1>
+          <span class="sub-brand">ПК БГТУ • Система управления общежитием</span>
+        </div>
+      </div>
+
+      <!-- Role Switcher -->
+      <div class="role-selector-wrap">
+        <span class="role-label">Текущая роль:</span>
+        <div class="role-tabs">
+          <button class="role-btn active" data-role="student" id="role-btn-student">
+            <span class="role-icon">👤</span> Студент
+          </button>
+          <button class="role-btn" data-role="warden" id="role-btn-warden">
+            <span class="role-icon">🔑</span> Комендант
+          </button>
+          <button class="role-btn" data-role="tutor" id="role-btn-tutor">
+            <span class="role-icon">🎓</span> Воспитатель
+          </button>
+          <button class="role-btn" data-role="admin" id="role-btn-admin">
+            <span class="role-icon">⚙️</span> Администратор
+          </button>
+        </div>
+      </div>
+
+      <div class="user-profile">
+        <div class="avatar" id="current-user-avatar">ВП</div>
+        <div class="user-meta">
+          <div class="user-name" id="current-user-name">Витеник П.Л.</div>
+          <div class="user-role-badge" id="current-user-badge">Студент (комн. 304/2)</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Business Process Pipeline Tracker -->
+    <section class="process-tracker-card">
+      <div class="tracker-title">
+        <span>🔄 Сквозной бизнес-процесс заселения:</span>
+        <span class="step-desc" id="pipeline-status-text">Этап: Проживание и оплата</span>
+      </div>
+      <div class="pipeline-steps">
+        <div class="step completed" id="step-apply">
+          <div class="step-num">1</div>
+          <div class="step-info">
+            <div class="step-name">Заявление</div>
+            <div class="step-sub">Подача заявки</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step completed" id="step-search">
+          <div class="step-num">2</div>
+          <div class="step-info">
+            <div class="step-name">Автопоиск</div>
+            <div class="step-sub">Подбор места</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step completed" id="step-contract">
+          <div class="step-num">3</div>
+          <div class="step-info">
+            <div class="step-name">Договор</div>
+            <div class="step-sub">Подписание</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step active" id="step-live">
+          <div class="step-num">4</div>
+          <div class="step-info">
+            <div class="step-name">Проживание</div>
+            <div class="step-sub">Ремонт и оплата</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step" id="step-checkout">
+          <div class="step-num">5</div>
+          <div class="step-info">
+            <div class="step-name">Выселение</div>
+            <div class="step-sub">Обходной лист</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area (Dynamic based on selected role) -->
+    <main class="main-content">
+
+      <!-- ============================================================= -->
+      <!-- ROLE 1: СТУДЕНТ -->
+      <!-- ============================================================= -->
+      <section class="role-view active" id="view-student">
+        <div class="view-header">
+          <div>
+            <h2>Личный кабинет студента</h2>
+            <p class="subtitle">Управление проживанием, заявлениями, оплатой и заявками на ремонт</p>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-primary" id="btn-open-application-modal">
+              <span>📝</span> Подать заявление на заселение
+            </button>
+            <button class="btn btn-secondary" id="btn-open-repair-modal">
+              <span>🛠️</span> Вызвать мастера (ремонт)
+            </button>
+          </div>
+        </div>
+
+        <!-- Student Summary Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card accent-blue">
+            <div class="kpi-header">
+              <span class="kpi-title">Текущее размещение</span>
+              <span class="kpi-icon">🛏️</span>
+            </div>
+            <div class="kpi-value" id="st-room-val">Корпус 1 • Комната 304</div>
+            <div class="kpi-sub">Койко-место №2 (двухместная)</div>
+          </div>
+
+          <div class="kpi-card accent-green">
+            <div class="kpi-header">
+              <span class="kpi-title">Договор найма</span>
+              <span class="kpi-icon">📄</span>
+            </div>
+            <div class="kpi-value" id="st-contract-val">№ ДН-2026/089</div>
+            <div class="kpi-sub">Действует до: 30.06.2027 • 1 850 ₽/мес.</div>
+          </div>
+
+          <div class="kpi-card accent-amber">
+            <div class="kpi-header">
+              <span class="kpi-title">Баланс / Задолженность</span>
+              <span class="kpi-icon">💳</span>
+            </div>
+            <div class="kpi-value" id="st-debt-val">0 ₽ (Оплачено)</div>
+            <div class="kpi-sub">
+              <button class="btn-link" id="btn-quick-pay">История платежей</button>
+            </div>
+          </div>
+
+          <div class="kpi-card accent-purple">
+            <div class="kpi-header">
+              <span class="kpi-title">Заявки на ремонт</span>
+              <span class="kpi-icon">🔧</span>
+            </div>
+            <div class="kpi-value" id="st-repairs-count">1 активная</div>
+            <div class="kpi-sub">Мастер назначен на 10.10 в 11:00</div>
+          </div>
+        </div>
+
+        <div class="content-split">
+          <!-- Left: My Applications and Contracts -->
+          <div class="panel">
+            <div class="panel-header">
+              <h3>История заявлений и договор</h3>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Номер</th>
+                      <th>Дата</th>
+                      <th>Тип комнаты</th>
+                      <th>Статус</th>
+                      <th>Действие</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-apps-table">
+                    <!-- Dynamic Rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Repairs and Check-out -->
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Мои заявки на ремонт и эксплуатацию</h3>
+              <button class="btn btn-sm btn-outline" id="btn-add-repair-quick">+ Новая заявка</button>
+            </div>
+            <div class="panel-body">
+              <div class="repair-list" id="student-repairs-list">
+                <!-- Dynamic Items -->
+              </div>
+
+              <div class="checkout-banner">
+                <div class="checkout-text">
+                  <strong>Планируете выезд?</strong>
+                  <p>Оформите электронный обходной лист заранее</p>
+                </div>
+                <button class="btn btn-danger btn-sm" id="btn-request-checkout">Подать на выселение</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- ROLE 2: КОМЕНДАНТ -->
+      <!-- ============================================================= -->
+      <section class="role-view" id="view-warden">
+        <div class="view-header">
+          <div>
+            <h2>Панель коменданта общежития</h2>
+            <p class="subtitle">Управление номерным фондом, распределение комнат и заселение</p>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-primary" id="btn-run-auto-search">
+              <span>🔍</span> Автоматический поиск свободных мест
+            </button>
+            <button class="btn btn-secondary" id="btn-manual-checkin">
+              <span>📋</span> Оформить заселение
+            </button>
+          </div>
+        </div>
+
+        <!-- Warden KPIs -->
+        <div class="kpi-grid">
+          <div class="kpi-card accent-blue">
+            <div class="kpi-header"><span class="kpi-title">Всего мест в фонде</span><span class="kpi-icon">🏢</span></div>
+            <div class="kpi-value" id="warden-total-places">450 мест</div>
+            <div class="kpi-sub">Корпус 1 (9 этажей)</div>
+          </div>
+          <div class="kpi-card accent-green">
+            <div class="kpi-header"><span class="kpi-title">Заселено студентов</span><span class="kpi-icon">👥</span></div>
+            <div class="kpi-value" id="warden-occupied-places">418 чел.</div>
+            <div class="kpi-sub">Загрузка: 92.8%</div>
+          </div>
+          <div class="kpi-card accent-purple">
+            <div class="kpi-header"><span class="kpi-title">Свободных мест</span><span class="kpi-icon">🟢</span></div>
+            <div class="kpi-value" id="warden-free-places">28 мест</div>
+            <div class="kpi-sub">16 мужских • 12 женских</div>
+          </div>
+          <div class="kpi-card accent-amber">
+            <div class="kpi-header"><span class="kpi-title">Ожидают распределения</span><span class="kpi-icon">⏳</span></div>
+            <div class="kpi-value" id="warden-pending-apps">5 заявлений</div>
+            <div class="kpi-sub">2 льготные квоты</div>
+          </div>
+        </div>
+
+        <!-- Interactive Inventory & Bed Distribution Map -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <h3>Интерактивная карта номерного фонда</h3>
+              <div class="filter-group">
+                <label>Этаж: </label>
+                <select id="floor-filter" class="form-select-sm">
+                  <option value="all">Все этажи</option>
+                  <option value="2">2 этаж (Женский)</option>
+                  <option value="3" selected>3 этаж (Мужской)</option>
+                  <option value="4">4 этаж (Мужской)</option>
+                </select>
+                <label style="margin-left:12px;">Статус: </label>
+                <select id="status-filter" class="form-select-sm">
+                  <option value="all">Все</option>
+                  <option value="free">Только свободные</option>
+                  <option value="occupied">Занятые</option>
+                </select>
+              </div>
+            </div>
+            <div class="legend-inline">
+              <span class="badge-dot badge-free">Свободно</span>
+              <span class="badge-dot badge-occupied">Занято</span>
+              <span class="badge-dot badge-reserved">Резерв</span>
+              <span class="badge-dot badge-repair">Ремонт</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="rooms-grid" id="rooms-visual-grid">
+              <!-- Dynamic Room Cards with Beds -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Applications for Allocation -->
+        <div class="panel" style="margin-top: 24px;">
+          <div class="panel-header">
+            <h3>Входящие заявления студентов на распределение</h3>
+            <span class="badge badge-info" id="badge-incoming-count">3 требуют решения</span>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>№ Заявления</th>
+                    <th>Студент</th>
+                    <th>Пол / Курс</th>
+                    <th>Факультет</th>
+                    <th>Льгота</th>
+                    <th>Подобранное место</th>
+                    <th>Действия</th>
+                  </tr>
+                </thead>
+                <tbody id="warden-apps-table">
+                  <!-- Dynamic rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- ROLE 3: ВОСПИТАТЕЛЬ -->
+      <!-- ============================================================= -->
+      <section class="role-view" id="view-tutor">
+        <div class="view-header">
+          <div>
+            <h2>Кабинет воспитателя общежития</h2>
+            <p class="subtitle">Учёт контингента, согласование льгот и контроль правил проживания</p>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-primary" id="btn-record-violation">
+              <span>⚠️</span> Зафиксировать замечание
+            </button>
+          </div>
+        </div>
+
+        <div class="content-split">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Список проживающих студентов (По комнатам)</h3>
+              <input type="text" id="tutor-search-input" placeholder="Поиск по ФИО, комнате..." class="form-input-sm">
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>ФИО студента</th>
+                      <th>Комната</th>
+                      <th>Группа / Курс</th>
+                      <th>Телефон</th>
+                      <th>Статус поведения</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tutor-students-table">
+                    <!-- Dynamic -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Согласование заявлений льготных категорий</h3>
+            </div>
+            <div class="panel-body" id="tutor-benefits-list">
+              <!-- Benefit applications -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- ROLE 4: АДМИНИСТРАТОР -->
+      <!-- ============================================================= -->
+      <section class="role-view" id="view-admin">
+        <div class="view-header">
+          <div>
+            <h2>Панель системного администратора</h2>
+            <p class="subtitle">Управление номерным фондом, финансовый аудит и реестр задолженностей</p>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-secondary" id="btn-export-excel">
+              <span>📊</span> Выгрузить реестр должников
+            </button>
+            <button class="btn btn-primary" id="btn-add-room-modal">
+              <span>➕</span> Добавить комнату в фонд
+            </button>
+          </div>
+        </div>
+
+        <!-- Financial KPI Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card accent-green">
+            <div class="kpi-header"><span class="kpi-title">Собрано за месяц</span><span class="kpi-icon">💰</span></div>
+            <div class="kpi-value">773 300 ₽</div>
+            <div class="kpi-sub">План: 832 500 ₽ (92.9%)</div>
+          </div>
+          <div class="kpi-card accent-red">
+            <div class="kpi-header"><span class="kpi-title">Общая задолженность</span><span class="kpi-icon">📉</span></div>
+            <div class="kpi-value" id="admin-total-debt">59 200 ₽</div>
+            <div class="kpi-sub">32 жильца имеют долг > 1 мес.</div>
+          </div>
+          <div class="kpi-card accent-blue">
+            <div class="kpi-header"><span class="kpi-title">Средний тариф в месяц</span><span class="kpi-icon">🏷️</span></div>
+            <div class="kpi-value">1 850 ₽</div>
+            <div class="kpi-sub">Бюджетная основа</div>
+          </div>
+          <div class="kpi-card accent-purple">
+            <div class="kpi-header"><span class="kpi-title">Журнал безопасности</span><span class="kpi-icon">🛡️</span></div>
+            <div class="kpi-value">152-ФЗ Контур</div>
+            <div class="kpi-sub">Шифрование БД: Активно</div>
+          </div>
+        </div>
+
+        <!-- Debtors Table -->
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Реестр жильцов с задолженностью по оплате найма</h3>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Студент</th>
+                    <th>Комната</th>
+                    <th>Договор</th>
+                    <th>Период долга</th>
+                    <th>Сумма долга</th>
+                    <th>Действия</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-debtors-table">
+                  <!-- Dynamic rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Modals -->
+    <!-- Modal 1: Auto-Search Engine Dialog -->
+    <div class="modal-backdrop" id="modal-auto-search">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>🔍 Интеллектуальный автопоиск свободных мест</h3>
+          <button class="modal-close" data-close="modal-auto-search">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-intro">Алгоритм подбирает свободные койко-места с учётом гендерного зонирования комнат, курса обучения и отсутствия превышения вместимости.</p>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Пол студента:</label>
+              <select id="search-gender" class="form-control">
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Курс:</label>
+              <select id="search-course" class="form-control">
+                <option value="1">1 курс (Адаптационный блок)</option>
+                <option value="2">2 курс</option>
+                <option value="3" selected>3 курс</option>
+                <option value="4">4 курс</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Тип размещения:</label>
+              <select id="search-room-type" class="form-control">
+                <option value="any">Любой доступный</option>
+                <option value="2-bed">2-местная комната</option>
+                <option value="3-bed">3-местная комната</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Корпус:</label>
+              <select id="search-building" class="form-control">
+                <option value="1">Корпус №1 (Главный)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="btn-execute-search" style="margin-top:16px;">
+            Выполнить автоматический подбор
+          </button>
+
+          <!-- Search Results Container -->
+          <div id="search-results-box" class="search-results-box" style="display:none; margin-top:20px;">
+            <div class="results-header">Найдено оптимальных вариантов: <span id="results-count">0</span></div>
+            <div class="results-list" id="results-list-container">
+              <!-- Cards -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: New Application Dialog -->
+    <div class="modal-backdrop" id="modal-application">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>📝 Подача заявления на заселение в общежитие</h3>
+          <button class="modal-close" data-close="modal-application">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="form-new-application">
+            <div class="form-group">
+              <label>ФИО студента:</label>
+              <input type="text" id="app-fio" class="form-control" value="Витеник П.Л." required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Факультет / Отделение:</label>
+                <input type="text" id="app-faculty" class="form-control" value="Информационные технологии" required>
+              </div>
+              <div class="form-group">
+                <label>Курс:</label>
+                <input type="number" id="app-course" class="form-control" value="3" min="1" max="5" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Пол:</label>
+                <select id="app-gender" class="form-control">
+                  <option value="male">Мужской</option>
+                  <option value="female">Женский</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Желаемая комната:</label>
+                <select id="app-room-pref" class="form-control">
+                  <option value="2-bed">2-местная</option>
+                  <option value="3-bed">3-местная</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Льготная категория (при наличии):</label>
+              <select id="app-benefit" class="form-control">
+                <option value="none">Нет льготы</option>
+                <option value="orphan">Сирота / Опека (100% квота)</option>
+                <option value="disability">Инвалидность</option>
+                <option value="target">Целевое направление</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px;">Отправить заявление</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3: Repair Request Modal -->
+    <div class="modal-backdrop" id="modal-repair">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>🛠️ Заявка на ремонт и устранение неисправности</h3>
+          <button class="modal-close" data-close="modal-repair">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="form-new-repair">
+            <div class="form-group">
+              <label>Комната:</label>
+              <input type="text" id="rep-room" class="form-control" value="304" required>
+            </div>
+            <div class="form-group">
+              <label>Категория неисправности:</label>
+              <select id="rep-category" class="form-control">
+                <option value="сантехника">Сантехника (смеситель, засор, радиатор)</option>
+                <option value="электрика">Электрика (розетка, выключатель, светильник)</option>
+                <option value="мебель">Мебель / Двери (замок, петли, кровать, стул)</option>
+                <option value="прочее">Прочее бытовое обслуживание</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Подробное описание проблемы:</label>
+              <textarea id="rep-desc" class="form-control" rows="3" placeholder="Опишите, что вышло из строя..." required>Подкапывает кран умывальника в санузле</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top:16px;">Зарегистрировать заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Tenancy Contract Modal -->
+    <div class="modal-backdrop" id="modal-contract">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-header">
+          <h3>📄 Договор найма жилого помещения</h3>
+          <button class="modal-close" data-close="modal-contract">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="contract-doc-preview" id="contract-doc-text">
+            <!-- Dynamic generated legal text -->
+          </div>
+          <div class="modal-actions" style="margin-top:20px; display:flex; justify-content:flex-end; gap:12px;">
+            <button class="btn btn-secondary modal-close" data-close="modal-contract">Закрыть</button>
+            <button class="btn btn-success" id="btn-sign-contract-action">
+              <span>✍️</span> Подписать договор электронной подписью
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: Quick Payment Gateway Simulator -->
+    <div class="modal-backdrop" id="modal-payment">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>💳 Банковский платёжный шлюз (СБП / Карта)</h3>
+          <button class="modal-close" data-close="modal-payment">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="payment-box">
+            <div class="pay-amount-label">К оплате:</div>
+            <div class="pay-amount-val" id="pay-modal-amount">1 850 ₽</div>
+            <div class="pay-purpose">Назначение: Найм жилого помещения (комн. 304, октябрь 2026)</div>
+            
+            <div class="payment-methods">
+              <label class="pay-method-btn active">
+                <input type="radio" name="pay-method" checked> СБП (Система быстрых платежей)
+              </label>
+              <label class="pay-method-btn">
+                <input type="radio" name="pay-method"> Банковская карта МИР
+              </label>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="btn-confirm-payment-action" style="margin-top:20px;">
+              Оплатить 1 850 ₽
+            </button>
+            <div class="pay-secure-note">🔒 Защищено 256-битным шифрованием по стандарту PCI DSS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toast-container"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
