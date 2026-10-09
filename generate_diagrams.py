@@ -1,9 +1,4 @@
-"""
-Script to generate valid draw.io XML files and render high-resolution PNG images
-for Practical Work 1 and Practical Work 2.
-Student: Vitenik P.L.
-Topic: Dormitory Management System
-"""
+
 
 import os
 import subprocess
@@ -33,11 +28,9 @@ def render_html_to_png(html_content, output_png, width=1200, height=800):
         os.remove(temp_html)
         
     if os.path.exists(abs_png):
-        # Crop whitespace/blank borders with PIL
         try:
             im = Image.open(abs_png)
-            bg = Image.new(im.mode, im.size, (255, 255, 255))
-            # keep image clean
+            bg = Image.new(im.mode, im.size, (255, 255, 255)
             print(f"Rendered: {output_png} ({im.size[0]}x{im.size[1]})")
         except Exception as e:
             print(f"Image processing note: {e}")
