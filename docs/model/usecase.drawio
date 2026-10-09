@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" modified="2026-10-09T22:30:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="diag_1" name="Page-1">
+    <mxGraphModel dx="1250" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- System Boundary -->
+        <mxCell id="sys_box" value="Система управления общежитием" style="shape=rect;html=1;whiteSpace=wrap;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;fontStyle=1;fontSize=15;fontColor=#1E293B;dashed=0;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="240" y="30" width="760" height="790" as="geometry" />
+        </mxCell>
+
+        <!-- Actors Left -->
+        <mxCell id="act_student" value="Студент" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="70" y="160" width="45" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_warden" value="Комендант" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#064E3B;" vertex="1" parent="1">
+          <mxGeometry x="70" y="440" width="45" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Actors Right -->
+        <mxCell id="act_tutor" value="Воспитатель" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#78350F;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="180" width="45" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_admin" value="Администратор" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#F3E8FF;strokeColor=#7C3AED;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#4C1D95;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="440" width="45" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- External Systems -->
+        <mxCell id="ext_payment" value="&amp;laquo;system&amp;raquo;&#10;Платёжный шлюз&#10;(Банк / СБП)" style="shape=rect;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;fontSize=11;fontStyle=1;fontColor=#334155;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Use Cases Column 1 -->
+        <mxCell id="uc_apply" value="Подать заявление&#10;на заселение" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="80" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_benefit" value="Прикрепить документы&#10;о льготах" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1;fontSize=11;fontColor=#1E40AF;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="75" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_search_place" value="Подобрать свободное место&#10;(автопоиск)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="490" y="160" width="190" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_distribute" value="Распределить место&#10;в общежитии" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="240" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_contract" value="Сформировать договор&#10;найма жилья" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1;fontSize=11;fontColor=#1E40AF;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="270" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_checkin" value="Оформить заселение&#10;и выдачу ключей" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#064E3B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="340" width="170" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_repair_req" value="Зарегистрировать заявку&#10;на ремонт" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_repair_proc" value="Обработать и закрыть&#10;заявку на ремонт" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="490" y="440" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_pay" value="Оплатить проживание&#10;онлайн" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="540" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_debts" value="Контролировать задолженность&#10;жильцов" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="500" y="550" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_checkout" value="Оформить выселение&#10;и обходной лист" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="270" y="640" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_damage" value="Зафиксировать ущерб&#10;и долги" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=1;fontSize=11;fontColor=#991B1B;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="650" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_rooms_manage" value="Вести учёт номерного фонда&#10;(корпуса, комнаты, места)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="740" y="380" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_reports" value="Формировать аналитические&#10;и статистические отчёты" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="740" y="500" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_behavior" value="Контролировать соблюдение&#10;правил проживания" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=1.5;fontSize=12;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="740" y="240" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Associations: Student -->
+        <mxCell id="a_st_apply" style="endArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="act_student" target="uc_apply" />
+        <mxCell id="a_st_repair" style="endArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="act_student" target="uc_repair_req" />
+        <mxCell id="a_st_pay" style="endArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="act_student" target="uc_pay" />
+        <mxCell id="a_st_cout" style="endArrow=none;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="act_student" target="uc_checkout" />
+
+        <!-- Associations: Warden -->
+        <mxCell id="a_w_dist" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_distribute" />
+        <mxCell id="a_w_chin" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_checkin" />
+        <mxCell id="a_w_rproc" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_repair_proc" />
+        <mxCell id="a_w_cout" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_checkout" />
+        <mxCell id="a_w_rooms" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_rooms_manage" />
+        <mxCell id="a_w_debts" style="endArrow=none;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="act_warden" target="uc_debts" />
+
+        <!-- Associations: Tutor -->
+        <mxCell id="a_t_beh" style="endArrow=none;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_tutor" target="uc_behavior" />
+        <mxCell id="a_t_rep" style="endArrow=none;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_tutor" target="uc_reports" />
+        <mxCell id="a_t_repair" style="endArrow=none;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_tutor" target="uc_repair_req" />
+
+        <!-- Associations: Admin -->
+        <mxCell id="a_ad_rooms" style="endArrow=none;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="act_admin" target="uc_rooms_manage" />
+        <mxCell id="a_ad_debts" style="endArrow=none;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="act_admin" target="uc_debts" />
+        <mxCell id="a_ad_reports" style="endArrow=none;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="1" source="act_admin" target="uc_reports" />
+
+        <!-- Associations: External Payment -->
+        <mxCell id="a_pay_ext" style="endArrow=none;strokeColor=#64748B;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="uc_pay" target="ext_payment" />
+
+        <!-- Includes -->
+        <mxCell id="inc_dist_search" value="&amp;laquo;include&amp;raquo;" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;fontColor=#1E40AF;" edge="1" parent="1" source="uc_distribute" target="uc_search_place" />
+        <mxCell id="inc_chin_dist" value="&amp;laquo;include&amp;raquo;" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;fontColor=#1E40AF;" edge="1" parent="1" source="uc_checkin" target="uc_distribute" />
+        <mxCell id="inc_chin_cont" value="&amp;laquo;include&amp;raquo;" style="dashed=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;fontColor=#1E40AF;" edge="1" parent="1" source="uc_checkin" target="uc_contract" />
+
+        <!-- Extends -->
+        <mxCell id="ext_ben_apply" value="&amp;laquo;extend&amp;raquo;" style="dashed=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#991B1B;" edge="1" parent="1" source="uc_benefit" target="uc_apply" />
+        <mxCell id="ext_dam_cout" value="&amp;laquo;extend&amp;raquo;" style="dashed=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#991B1B;" edge="1" parent="1" source="uc_damage" target="uc_checkout" />
+    
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
