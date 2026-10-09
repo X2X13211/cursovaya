@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net" modified="2026-10-09T22:30:00.000Z" agent="Mozilla/5.0" version="24.0.0" type="device">
+  <diagram id="diag_1" name="Page-1">
+    <mxGraphModel dx="1150" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="pool" value="Сценарий: Заселение с автоматическим поиском и распределением места" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=26;horizontal=0;horizontalStack=1;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=1.5;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1050" height="740" as="geometry" />
+        </mxCell>
+
+        <!-- Lane 1: Student -->
+        <mxCell id="lane_student" value="Студент" style="swimlane;html=1;startSize=26;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#1E40AF;" vertex="1" parent="pool">
+          <mxGeometry x="26" y="0" width="340" height="740" as="geometry" />
+        </mxCell>
+        <!-- Lane 2: Warden -->
+        <mxCell id="lane_warden" value="Комендант" style="swimlane;html=1;startSize=26;fillColor=#ECFDF5;strokeColor=#10B981;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#065F46;" vertex="1" parent="pool">
+          <mxGeometry x="366" y="0" width="340" height="740" as="geometry" />
+        </mxCell>
+        <!-- Lane 3: System -->
+        <mxCell id="lane_sys" value="Система (Общежитие)" style="swimlane;html=1;startSize=26;fillColor=#F5F3FF;strokeColor=#8B5CF6;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#5B21B6;" vertex="1" parent="pool">
+          <mxGeometry x="706" y="0" width="344" height="740" as="geometry" />
+        </mxCell>
+
+        <!-- Steps in Student Lane -->
+        <mxCell id="a_init" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="lane_student">
+          <mxGeometry x="155" y="45" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="act_st_1" value="Заполнить и подать&#10;заявление онлайн" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="100" y="105" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_st_dec" value="Студент согласен&#10;с местом?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_student">
+          <mxGeometry x="105" y="380" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_st_sign" value="Подписать договор найма&#10;в личном кабинете" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="100" y="480" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_st_keys" value="Получить ключи&#10;и заселиться в комнату" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="100" y="620" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_final_ok" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#059669;strokeWidth=2;" vertex="1" parent="lane_student">
+          <mxGeometry x="155" y="695" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Steps in Warden Lane -->
+        <mxCell id="act_wa_rev" value="Проверить документы&#10;и статус заявления" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_warden">
+          <mxGeometry x="100" y="105" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_wa_trig" value="Запустить алгоритм&#10;автоподбора места" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_warden">
+          <mxGeometry x="100" y="180" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_wa_keys" value="Сверить личность, выдать&#10;ключи и электронный пропуск" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_warden">
+          <mxGeometry x="90" y="620" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Steps in System Lane -->
+        <mxCell id="act_sys_val" value="Валидация данных заявления&#10;и льготного статуса" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_sys">
+          <mxGeometry x="90" y="105" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_sys_search" value="Выполнить автопоиск мест&#10;(фильтры: пол, курс, квоты)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="lane_sys">
+          <mxGeometry x="90" y="180" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_sys_dec" value="Место найдено?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_sys">
+          <mxGeometry x="105" y="260" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_sys_queue" value="Зафиксировать отказ /&#10;Поместить в лист ожидания" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#991B1B;" vertex="1" parent="lane_sys">
+          <mxGeometry x="90" y="340" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_final_fail" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#DC2626;strokeWidth=2;" vertex="1" parent="lane_sys">
+          <mxGeometry x="155" y="415" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act_sys_res" value="Заблокировать койко-место&#10;(SELECT FOR UPDATE) и&#10;сформировать проект договора" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_sys">
+          <mxGeometry x="85" y="480" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="act_sys_reg" value="Перевести статус в «Заселен»,&#10;активировать начисление оплаты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8B5CF6;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_sys">
+          <mxGeometry x="85" y="555" width="170" height="50" as="geometry" />
+        </mxCell>
+    
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
