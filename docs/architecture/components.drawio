@@ -57,6 +57,13 @@
     <mxCell id="con_app_db" value="SQL (TCP 5432)" style="endArrow=none;strokeColor=#52695C;strokeWidth=2;fontFamily=Arial;" edge="1" parent="1" source="c_sub_dal" target="comp_db" ><mxGeometry relative="1" as="geometry" /></mxCell>
     <mxCell id="con_bill_bank" value="REST / HTTPS" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_bill" target="comp_bank" ><mxGeometry relative="1" as="geometry" /></mxCell>
     <mxCell id="con_core_notify" value="REST / HTTPS" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_core" target="comp_notify" ><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Internal Dependencies -->
+    <mxCell id="con_web_sec" value="" style="endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_web" target="c_sub_sec" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_web_core" value="" style="endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_web" target="c_sub_core" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_web_maint" value="" style="endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_web" target="c_sub_maint" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_web_bill" value="" style="endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_web" target="c_sub_bill" ><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="con_core_search" value="" style="endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1;dashed=1;fontFamily=Arial;" edge="1" parent="1" source="c_sub_core" target="c_sub_search" ><mxGeometry relative="1" as="geometry" /></mxCell>
   
    </root>
   </mxGraphModel>
