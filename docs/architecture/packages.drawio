@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0">
+  <diagram id="diag_1" name="Page-1">
+    <mxGraphModel dx="881" dy="770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pkg_ui" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Presentation Layer (Web UI &amp; REST API)&#xa;• StudentPortalController&#xa;• WardenDashboardController&#xa;• AdminConsoleController" vertex="1">
+          <mxGeometry height="120" width="840" x="80" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_id" parent="1" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Identity &amp; Access&#xa;• User&#xa;• Student&#xa;• Role (RBAC)&#xa;• AuthService" vertex="1">
+          <mxGeometry height="140" width="230" x="100" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_inv" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Dormitory Inventory&#xa;• Корпус (Building)&#xa;• Комната (Room)&#xa;• Место (BedPlace)&#xa;• AutoSearchEngine" vertex="1">
+          <mxGeometry height="140" width="240" x="380" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_tenancy" parent="1" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Tenancy Core (Ядро заселения)&#xa;• Заявление (Application)&#xa;• Заселение (CheckIn)&#xa;• ДоговорНайма (Contract)&#xa;• Выселение (CheckOut)" vertex="1">
+          <mxGeometry height="140" width="230" x="690" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_maint" parent="1" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Maintenance &amp; Repairs&#xa;• ЗаявкаНаРемонт&#xa;• RepairCatalog&#xa;• MaintenanceLog" vertex="1">
+          <mxGeometry height="130" width="230" x="230" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_billing" parent="1" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;fontFamily=Arial;" value="«package»&#xa;Billing &amp; Analytics&#xa;• Платёж (Payment)&#xa;• DebtTracker&#xa;• FinancialReportService" vertex="1">
+          <mxGeometry height="130" width="240" x="540" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_ext" parent="1" style="shape=folder;fontStyle=1;tabWidth=120;tabHeight=25;tabPosition=left;html=1;boundedLbl=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=10;dashed=1;fontFamily=Arial;" value="«package, external»&#xa;External Gateways&#xa;• BankPaymentGateway&#xa;• NotificationService (SMS/Email)" vertex="1">
+          <mxGeometry height="100" width="240" x="540" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ui_id" edge="1" parent="1" source="pkg_ui" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;entryX=0.918;entryY=0.168;entryDx=0;entryDy=0;entryPerimeter=0;" target="pkg_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ui_inv" edge="1" parent="1" source="pkg_ui" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;entryX=0;entryY=0;entryDx=110;entryDy=25;entryPerimeter=0;" target="pkg_inv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ui_ten" edge="1" parent="1" source="pkg_ui" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="pkg_tenancy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ui_maint" edge="1" parent="1" source="pkg_ui" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;entryX=0;entryY=0;entryDx=100;entryDy=25;entryPerimeter=0;" target="pkg_maint">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ui_billing" edge="1" parent="1" source="pkg_ui" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="pkg_billing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ten_inv" edge="1" parent="1" source="pkg_tenancy" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.8;fontFamily=Arial;" target="pkg_inv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_ten_id" edge="1" parent="1" source="pkg_tenancy" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.8;fontFamily=Arial;" target="pkg_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_maint_inv" edge="1" parent="1" source="pkg_maint" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;exitX=0;exitY=0;exitDx=165;exitDy=25;exitPerimeter=0;" target="pkg_inv">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_maint_id" edge="1" parent="1" source="pkg_maint" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="pkg_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_bill_ten" edge="1" parent="1" source="pkg_billing" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;exitX=0;exitY=0;exitDx=110;exitDy=25;exitPerimeter=0;" target="pkg_tenancy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_bill_id" edge="1" parent="1" source="pkg_billing" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="pkg_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_bill_ext" edge="1" parent="1" source="pkg_billing" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;entryX=0;entryY=0;entryDx=120;entryDy=25;entryPerimeter=0;" target="pkg_ext">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

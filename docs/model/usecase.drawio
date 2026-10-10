@@ -1,0 +1,139 @@
+<mxfile host="Electron" agent="Mozilla/5.0">
+  <diagram id="diag_1" name="Page-1">
+    <mxGraphModel dx="2055" dy="1797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys_box" parent="1" style="shape=rect;html=1;whiteSpace=wrap;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;fontStyle=1;fontSize=15;fontColor=#000000;dashed=0;rounded=1;arcSize=4;fontFamily=Arial;" value="Система управления общежитием" vertex="1">
+          <mxGeometry height="790" width="760" x="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="act_student" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Студент" vertex="1">
+          <mxGeometry height="80" width="45" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="act_warden" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Комендант" vertex="1">
+          <mxGeometry height="80" width="45" x="70" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="act_tutor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Воспитатель" vertex="1">
+          <mxGeometry height="80" width="45" x="1090" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="act_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Администратор" vertex="1">
+          <mxGeometry height="80" width="45" x="1090" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_payment" parent="1" style="shape=rect;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontStyle=1;fontColor=#000000;rounded=1;fontFamily=Arial;" value="«system»&#xa;Платёжный шлюз&#xa;(Банк / СБП)" vertex="1">
+          <mxGeometry height="60" width="120" x="1060" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_apply" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Подать заявление&#xa;на заселение" vertex="1">
+          <mxGeometry height="55" width="170" x="270" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_benefit" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1;fontSize=11;fontColor=#000000;dashed=1;fontFamily=Arial;" value="Прикрепить документы&#xa;о льготах" vertex="1">
+          <mxGeometry height="50" width="160" x="490" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_search_place" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Подобрать свободное место&#xa;(автопоиск)" vertex="1">
+          <mxGeometry height="55" width="190" x="490" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_distribute" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Распределить место&#xa;в общежитии" vertex="1">
+          <mxGeometry height="55" width="170" x="270" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_contract" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1;fontSize=11;fontColor=#000000;dashed=1;fontFamily=Arial;" value="Сформировать договор&#xa;найма жилья" vertex="1">
+          <mxGeometry height="50" width="170" x="490" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_checkin" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#000000;fontFamily=Arial;" value="Оформить заселение&#xa;и выдачу ключей" vertex="1">
+          <mxGeometry height="60" width="170" x="270" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_repair_req" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Зарегистрировать заявку&#xa;на ремонт" vertex="1">
+          <mxGeometry height="55" width="170" x="270" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_repair_proc" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Обработать и закрыть&#xa;заявку на ремонт" vertex="1">
+          <mxGeometry height="55" width="170" x="490" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_pay" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Оплатить проживание&#xa;онлайн" vertex="1">
+          <mxGeometry height="55" width="170" x="270" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_debts" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Контролировать задолженность&#xa;жильцов" vertex="1">
+          <mxGeometry height="55" width="180" x="490" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_checkout" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Оформить выселение&#xa;и обходной лист" vertex="1">
+          <mxGeometry height="55" width="170" x="270" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_damage" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1;fontSize=11;fontColor=#000000;dashed=1;fontFamily=Arial;" value="Зафиксировать ущерб&#xa;и долги" vertex="1">
+          <mxGeometry height="50" width="160" x="505" y="645" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_rooms_manage" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Вести учёт номерного фонда&#xa;(корпуса, комнаты, места)" vertex="1">
+          <mxGeometry height="60" width="190" x="740" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_reports" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Формировать аналитические&#xa;и статистические отчёты" vertex="1">
+          <mxGeometry height="60" width="190" x="740" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_behavior" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF4EF;strokeColor=#52695C;strokeWidth=1.5;fontSize=12;fontColor=#000000;fontFamily=Arial;" value="Контролировать соблюдение&#xa;правил проживания" vertex="1">
+          <mxGeometry height="60" width="190" x="740" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="a_st_apply" edge="1" parent="1" source="act_student" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_apply">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_st_repair" edge="1" parent="1" source="act_student" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_repair_req">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_st_pay" edge="1" parent="1" source="act_student" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_pay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_st_cout" edge="1" parent="1" source="act_student" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_checkout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_dist" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_distribute">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_chin" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_checkin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_rproc" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_repair_proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_cout" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_checkout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_rooms" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_rooms_manage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_w_debts" edge="1" parent="1" source="act_warden" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_debts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_t_beh" edge="1" parent="1" source="act_tutor" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_behavior">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_t_rep" edge="1" parent="1" source="act_tutor" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_reports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_t_repair" edge="1" parent="1" source="act_tutor" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_repair_req">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_ad_rooms" edge="1" parent="1" source="act_admin" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_rooms_manage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_ad_debts" edge="1" parent="1" source="act_admin" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_debts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_ad_reports" edge="1" parent="1" source="act_admin" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;fontFamily=Arial;" target="uc_reports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_pay_ext" edge="1" parent="1" source="uc_pay" style="endArrow=none;strokeColor=#52695C;strokeWidth=1.5;dashed=1;fontFamily=Arial;" target="ext_payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_dist_search" edge="1" parent="1" source="uc_distribute" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontColor=#000000;fontFamily=Arial;" target="uc_search_place" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_chin_dist" edge="1" parent="1" source="uc_checkin" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontColor=#000000;fontFamily=Arial;" target="uc_distribute" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_chin_cont" edge="1" parent="1" source="uc_checkin" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontColor=#000000;fontFamily=Arial;" target="uc_contract" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_ben_apply" edge="1" parent="1" source="uc_benefit" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontColor=#000000;fontFamily=Arial;" target="uc_apply" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_dam_cout" edge="1" parent="1" source="uc_damage" style="dashed=1;endArrow=open;endFill=0;strokeColor=#52695C;strokeWidth=1.5;fontSize=11;fontColor=#000000;fontFamily=Arial;" target="uc_checkout" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
