@@ -23,32 +23,32 @@ namespace descriptionUser
 
 class UserDataBase
 {
-    private AppLogger appLogger = new AppLogger();
+    private AppLogger appLogger = new AppLogger(); //подключаем в класс логирование
     
     [Required(ErrorMessage = "Поле строки подключения к базе данных не может быть пустым")]
-    private string connection_data_string;
+    private string connection_data_string; //передаем строку подключения
 
-    public UserDataBase(string connectionData)
+    public UserDataBase(string connectionData) //конструктор
     {
         connection_data_string = connectionData;
     }
 
     public SqliteConnection UseConnectDatabase()
     {
-        var connection = new SqliteConnection(connection_data_string);
+        var connection = new SqliteConnection(connection_data_string); //подключение 
         try
         {
-            connection.Open();
+            connection.Open(); 
             return connection;
         }
-        catch (Exception ex)
+        catch (Exception ex) // обработчик ошибки
         {
             appLogger.Error("Произошла ошибка при подключении к базе данных!", ex);
             throw;
         }
     }
 
-    public void AddTablesInDatabase()
+    public void AddTablesInDatabase() //создаем таблицы
     {
         using (var connection = UseConnectDatabase())
         {
@@ -80,9 +80,9 @@ class UserDataBase
                         GroundsForGranting INTEGER,
                         FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE
                     );";
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
 
-                command.CommandText = "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('Users', 'Pasports', 'Documents');";
+                command.CommandText = "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('Users', 'Pasports', 'Documents');"; //запрос получение данных о таблицах
                 using (var reader = command.ExecuteReader())
                 {
                     Console.WriteLine("--- Проверка таблиц в БД ---");
@@ -90,19 +90,19 @@ class UserDataBase
                 
                     while (reader.Read())
                     {
-                        appLogger.Information($"Таблица найдена: {reader.GetString(0)}");
+                        appLogger.Information($"Таблица найдена: {reader.GetString(0)}"); //вывод
                         hasTables = true;
                     }
                     if (!hasTables)
                     {
-                        appLogger.Error("Ни одной таблицы не найдено!");
+                        appLogger.Error("Ни одной таблицы не найдено!"); //обработчик ошибок
                     }
                 }
             }
         }
     }
 
-    public void AddBaseDataUserToDatabase()
+    public void AddBaseDataUserToDatabase() //метод для взаимодействия с таблицой user
     {
         User user = new User();
         user.Enter_name();
@@ -134,7 +134,7 @@ class UserDataBase
         }
     }
 
-    public void AddPasportDataUserToDataBase(long userId, SqliteConnection connection)
+    public void AddPasportDataUserToDataBase(long userId, SqliteConnection connection) //метод для взаимодействия с таблицой паспортов
     {
         User_Pasport user_pasport = new User_Pasport();
         user_pasport.Enter_Data_Pasport();
@@ -160,7 +160,7 @@ class UserDataBase
 
         using (var command = connection.CreateCommand())
         {
-            int grounds = user_document.grounds_for_granting ? 1 : 0;
+            int grounds = user_document.grounds_for_granting ? 1 : 0; //проверяет возвращаемое значение
             command.CommandText = "INSERT INTO Documents (UserId, RegistrationAddress, EducationInfo, GroundsForGranting) VALUES (@userId, @address, @education, @grounds);";
             command.Parameters.AddWithValue("@userId", userId);
             command.Parameters.AddWithValue("@address", user_document.permanent_registration_address);
@@ -170,7 +170,7 @@ class UserDataBase
         }
     }
 
-    private void ShowList(SqliteConnection connection)
+    private void ShowList(SqliteConnection connection) //запрос в бд для получения списка студентов которые нуждаются в общежитии 
     {
         using (var command = connection.CreateCommand())
         {
@@ -244,7 +244,7 @@ class User
         return isValid;
     }
 
-    public void Enter_name()
+    public void Enter_name() //имя 
     {
         Console.Write("Введите ваше имя: ");
         name = Console.ReadLine()?.Trim();
@@ -255,7 +255,7 @@ class User
         }
     }
 
-    public void Enter_surname()
+    public void Enter_surname() //фамилия 
     {
         Console.Write("Введите вашу фамилию: "); 
         surname = Console.ReadLine()?.Trim();
@@ -266,7 +266,7 @@ class User
         }
     }
 
-    public void Enter_last_name()
+    public void Enter_last_name() //отчество 
     {
         Console.Write("Введите ваше отчество: ");
         last_name = Console.ReadLine()?.Trim();
@@ -277,7 +277,7 @@ class User
         }
     }
 
-    public void Enter_phone_number()
+    public void Enter_phone_number() //номер телефона
     {
         Console.Write("Введите ваш номер телефона: ");
         phone_number = Console.ReadLine()?.Trim();
@@ -288,7 +288,7 @@ class User
         }
     }
 
-    public void Enter_email()
+    public void Enter_email() //почта 
     {
         Console.Write("Введите ваш email адрес: "); 
         email = Console.ReadLine()?.Trim();
@@ -336,7 +336,7 @@ class User_Pasport
     {
     }
 
-    public void Enter_Data_Pasport()
+    public void Enter_Data_Pasport() //серия 
     {
         AppLogger appLogger = new AppLogger();
         Console.Write("Введите серию паспорта: "); 
@@ -347,7 +347,7 @@ class User_Pasport
         
         try
         {
-            Console.Write("Введите когда был выдан паспорт (в формате ДД.ММ.ГГГГ): ");
+            Console.Write("Введите когда был выдан паспорт (в формате ДД.ММ.ГГГГ): "); //дата выдачи 
             pasport_issued = DateTime.Parse(Console.ReadLine().Trim());
             if (pasport_issued > DateTime.Now)
             {
@@ -362,7 +362,7 @@ class User_Pasport
             return;
         }
 
-        Console.Write("Введите код подразделения (например, 123-456): ");
+        Console.Write("Введите код подразделения (например, 123-456): "); //код подразделения
         code_pasport_number = Console.ReadLine()?.Trim();
 
         var context = new ValidationContext(this);
@@ -395,7 +395,7 @@ class User_Document
 
     public bool grounds_for_granting;
 
-    public User_Document() { }
+    public User_Document() { } //конструктор
 
     public User_Document(string permanent_registration_address, string information_education, bool grounds_for_granting)
     {
@@ -430,7 +430,7 @@ class User_Document
         }
     }
 
-    public void Enter_grounds_for_granting()
+    public void Enter_grounds_for_granting() //общежитие
     {
         try
         {
@@ -470,23 +470,23 @@ public class InvalidExceptionUser : Exception //пользовательское
 
 public class AppLogger
 {
-    public void FirstMessage()
+    public void FirstMessage() //уведомление
     {
         Console.Clear();
         Console.Write("---Логирование включено----\n"); 
     }
 
-    public void Warning(string message)
+    public void Warning(string message) //
     {
         Console.Write($"[WARNING]: {message}");
     }
 
-    public void Information(string message)
+    public void Information(string message) //
     {
         Console.Write($"[Information]: {message} \n");
     }
     
-    public void Error(string techMessage, Exception ex = null)
+    public void Error(string techMessage, Exception ex = null) //
     {
         Console.Write($"[Error]: {techMessage} \n");
         if (ex != null)
