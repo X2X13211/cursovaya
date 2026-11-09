@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Вход в панель администратора";
+}
+
+<style>
+    html, body {
+        background-color: #141923 !important;
+    }
+    
+    .login-btn {
+        background-color: #7597f7;
+        color: #141c2b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .login-btn:hover {
+        background-color: #8da9fa;
+    }
+</style>
+
+<div class="flex items-center justify-center py-12 px-4" style="min-height: 75vh; background-color: #141923;">
+    
+    <!-- Карточка авторизации -->
+    <div class="w-full max-w-lg rounded-2xl shadow-sm p-8 sm:p-10" 
+         style="background-color: #1d2331; border: 1px solid #2b3448;">
+        
+        <!-- Заголовок -->
+        <div class="pb-6 mb-8 text-center" style="border-bottom: 1px solid #2b3448;">
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight" style="color: #ffffff;">Войдите в свой аккаунт</h1>
+            <p class="text-sm mt-2" style="color: #94a3b8;">Пожалуйста, введите свои данные</p>
+        </div>
+
+        <form asp-controller="Login" asp-action="Login" method="post" class="space-y-6">
+            
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="p-3 rounded-lg text-sm text-center" 
+                     style="background-color: rgba(127, 29, 29, 0.4); border: 1px solid #991b1b; color: #f87171;">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+
+            <div class="space-y-4">
+                <div>
+                    <input type="text" id="username" name="username" placeholder="Имя пользователя" required
+                           style="background-color: #141923; border: 1px solid #334155; color: #ffffff;"
+                           class="w-full rounded-lg px-4 py-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                </div>
+                
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Пароль" required
+                           style="background-color: #141923; border: 1px solid #334155; color: #ffffff;"
+                           class="w-full rounded-lg px-4 py-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <button type="submit"
+                        class="login-btn w-full rounded-lg px-4 py-3 text-base font-semibold shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" style="width: 20px; height: 20px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                    <span>Вход</span>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>

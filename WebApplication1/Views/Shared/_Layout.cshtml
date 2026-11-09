@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="ru" class="h-full bg-slate-50">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - WebApplication1</title>
+
+    <!-- Скомпилированный Tailwind CSS -->
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    
+    <!-- HTMX -->
+    <script src="~/lib/htmx/htmx.min.js" asp-append-version="true"></script>
+</head>
+<body class="flex flex-col min-h-full text-slate-800 antialiased">
+
+    <!-- 
+    <header class="bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="hidden sm:flex items-center gap-6">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+                    Главная
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+                    Дополнительная информация
+                </a>
+            </div>
+        </div>
+    </header>
+    -->
+    <!-- Основной контент -->
+    <main role="main" class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        @RenderBody()
+    </main>
+
+    <!-- Подвал сайта на Tailwind 
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex gap-4">
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="hover:text-slate-800 transition">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+     -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

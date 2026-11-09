@@ -1,0 +1,202 @@
+﻿@model WebApplication1.Models.UserDataViewModel
+@{
+    ViewData["Title"] = "Система управления общежитием";
+}
+
+<div class="py-12 space-y-6">
+
+    <!-- 1. Главная форма: Заявление на заселение и подбор свободного места -->
+    <div class="flex items-center justify-center">
+        <div class="w-full max-w-lg bg-white rounded-2xl shadow-sm border border-slate-200 p-8 sm:p-10">
+            
+            <div class="border-b border-slate-100 pb-6 mb-8 text-center">
+                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Заявление на заселение</h1>
+            </div>
+
+            <form method="post" asp-controller="Home" asp-action="SubmitRegistration" class="space-y-6">
+                
+                <!-- Раздел 1: Роль и личные данные -->
+                <div class="space-y-4">
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 text-center">
+                        Данные заявителя
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="UserRole" class="block text-sm font-medium text-slate-700 mb-1">Категория</label>
+                            <select id="UserRole" name="UserRole" required
+                                    class="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 bg-white leading-normal focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
+                                <option value="student">Студент</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="Surname" class="block text-sm font-medium text-slate-700 mb-1">Фамилия</label>
+                            <input type="text" id="Surname" name="Surname" placeholder="Иванов" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="Username" class="block text-sm font-medium text-slate-700 mb-1">Имя</label>
+                            <input type="text" id="Username" name="Username" placeholder="Иван" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="Patronymic" class="block text-sm font-medium text-slate-700 mb-1">Отчество</label>
+                            <input type="text" id="Patronymic" name="Patronymic" placeholder="Иванович" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="StudyGroup" class="block text-sm font-medium text-slate-700 mb-1">Учебная группа</label>
+                            <input type="text" id="StudyGroup" name="StudyGroup" placeholder="ИСиП-21" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="Course" class="block text-sm font-medium text-slate-700 mb-1">Курс</label>
+                            <input type="number" id="Course" name="Course" min="1" max="4" placeholder="2" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="Phone" class="block text-sm font-medium text-slate-700 mb-1">Телефон</label>
+                            <input type="tel" id="Phone" name="Phone" placeholder="+7 (999) 000-00-00" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="Email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="Email" id="Email" name="Email" placeholder="student@edu.ru" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Раздел 2: Паспортные данные -->
+                <div class="space-y-4 pt-6 border-t border-slate-100">
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 text-center">
+                        Паспортные данные
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="PassportSeries" class="block text-sm font-medium text-slate-700 mb-1">Серия</label>
+                            <input type="text" id="PassportSeries" name="PassportSeries" maxlength="4" placeholder="1234" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="PassportNumber" class="block text-sm font-medium text-slate-700 mb-1">Номер</label>
+                            <input type="text" id="PassportNumber" name="PassportNumber" maxlength="6" placeholder="567890" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Раздел 3: Параметры размещения и автоподбор места -->
+                <div class="space-y-4 pt-6 border-t border-slate-100">
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 text-center">
+                        Параметры размещения
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="Building" class="block text-sm font-medium text-slate-700 mb-1">Корпус общежития</label>
+                            <select id="Building" name="Building" required
+                                    class="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
+                                <option value="auto">Автоподбор свободного</option>
+                                <option value="1">Корпус №1</option>
+                                <option value="2">Корпус №2</option>
+                                <option value="3">Корпус №3</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="RoomCapacity" class="block text-sm font-medium text-slate-700 mb-1">Тип комнаты</label>
+                            <select id="RoomCapacity" name="RoomCapacity" required
+                                    class="w-full rounded-lg border border-slate-300 px-4 py-3 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition">
+                                <option value="any">Любое свободное место</option>
+                                <option value="2">2-местная комната</option>
+                                <option value="3">3-местная комната</option>
+                                <option value="4">4-местная комната</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="CheckInDate" class="block text-sm font-medium text-slate-700 mb-1">Дата заселения</label>
+                            <input type="date" id="CheckInDate" name="CheckInDate" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+
+                        <div>
+                            <label for="CheckOutDate" class="block text-sm font-medium text-slate-700 mb-1">Дата выселения</label>
+                            <input type="date" id="CheckOutDate" name="CheckOutDate" required
+                                   class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка отправки -->
+                <div class="pt-4">
+                    <button type="submit" name="action_type" value="auto_search"
+                            class="w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition">
+                        Подать заявление
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Ссылка на панель управления для персонала -->
+            <div class="pt-6 border-t border-slate-100 text-center" style="margin-top: 24px;">
+                <a asp-controller="Login" asp-action="Login"
+                   class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+                    Вход для сотрудников →
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. Дополнительная форма для проживающих: Заявка на ремонт -->
+    <div class="flex items-center justify-center">
+        <div class="w-full max-w-lg bg-white rounded-2xl shadow-sm border border-slate-200 p-8 sm:p-10">
+            
+            <div class="border-b border-slate-100 pb-6 mb-8 text-center">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-900">Сервис для проживающих</h2>
+                <p class="text-sm text-slate-500 mt-2">Регистрация заявки</p>
+            </div>
+
+            <form method="post" asp-controller="Home" asp-action="SubmitRepairRequest" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="RepairBuilding" class="block text-sm font-medium text-slate-700 mb-1">Корпус</label>
+                        <input type="number" id="RepairBuilding" name="RepairBuilding" min="1" max="10" placeholder="1" required
+                               class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                    </div>
+                    <div>
+                        <label for="RepairRoom" class="block text-sm font-medium text-slate-700 mb-1">Номер комнаты</label>
+                        <input type="text" id="RepairRoom" name="RepairRoom" placeholder="304А" required
+                               class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="RepairDescription" class="block text-sm font-medium text-slate-700 mb-1">Описание неисправности</label>
+                    <input type="text" id="RepairDescription" name="RepairDescription" placeholder="Не работает розетка у письменного стола" required
+                           class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition" />
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit"
+                            class="w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition">
+                        Отправить заявку
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
